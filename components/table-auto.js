@@ -84,8 +84,10 @@ Vue.component('table-auto-comp', {
     mounted () {
         axios
             .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+            // .get('https://mindicador.cl/api/dolar')
             .then(response => {
-                this.data = response.data.bpi; 
+                this.data = response.data.bpi;
+                // this.data = response.data.serie; //  
                 this.data = this.json2array(this.data);
                 this.getJsonKeys(this.data);
             })

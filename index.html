@@ -16,12 +16,23 @@
     <!-- TITLE -->
     <title>Vuejs2</title>
     <!-- STATIC CSS -->
-    <link rel="stylesheet" href="static/css/bootstrap.v4.5.0.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-vue/2.15.0/bootstrap-vue.min.js">
+    <!-- <link rel="stylesheet" href="static/css/bootstrap.v4.5.0.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-vue/2.15.0/bootstrap-vue.min.js"> -->
+    <link
+        type="text/css"
+        rel="stylesheet"
+        href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+        type="text/css"
+        rel="stylesheet"
+        href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css"
+    />
     <!-- STATIC JS -->
     <!-- development version, includes helpful console warnings -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- <script src="static/js/vue.v2.6.11.js"></script> -->
@@ -34,54 +45,44 @@
 </head>
 <body>
 
-    <div id="app" class="container">
-        <!-- <b-navbar toggleable="md" type="dark" variant="info">
+    <div id="app">
+        <b-navbar toggleable="md" type="dark" variant="info">
             <b-container>
                 <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-                <b-navbar-brand href="#">NavBar</b-navbar-brand>
+                <b-navbar-brand href="#/home">NavBar</b-navbar-brand>
 
                 <b-collapse id="nav-collapse" is-nav>
                     <b-navbar-nav>
-                        <b-nav-item href="#">Home</b-nav-item>
-                        <b-nav-item href="#">About</b-nav-item>
+                        <b-nav-item to="/home">Home</b-nav-item>
+                        <b-nav-item to="/bar">Bar</b-nav-item>
+                        <b-nav-item to="/foo">Foo</b-nav-item>
+                        <b-nav-item to="/msg">Msg</b-nav-item>
+                        <!-- <b-nav-item to="/tbl">Tbl</b-nav-item> -->
+                        <b-nav-item to="/user/789">User</b-nav-item>
+                        <b-nav-item to="/pepe">Pepe</b-nav-item>
+                        <b-nav-item v-bind:to="'/user/'+appNumber">User/{{appNumber}}</b-nav-item>
                     </b-navbar-nav>
                 </b-collapse>
             </b-container>            
-        </b-navbar> -->
+        </b-navbar>
 
-        <!-- <div id="nav">
-            <router-link to="/foo">Go to Foo</router-link>
-            <router-link to="/bar">Go to Bar</router-link>
-            <router-link to="/msg">Go to Msg</router-link>
-            <router-link to="/tbl">Go to Tbl</router-link>
-            <router-link to="/user/789">Go to User</router-link>
-            <router-link to="/pepe">Go to Pepe</router-link>
-            <router-link v-bind:to="'/user/'+appNumber">Go to User/{{appNumber}}</router-link>
-        </div> -->
-
-        <nav class="navbar fixed-top navbar-dark bg-dark">
-            <a class="navbar-brand active" href="#/home">Fixed top</a>
-            <router-link class="nav-link" to="/foo">Go to Foo</router-link>
-            <router-link class="navbar-item" to="/bar">Go to Bar</router-link>
-            <router-link class="navbar-brand" to="/msg">Go to Msg</router-link>
-            <router-link class="navbar-brand" to="/user/789">Go to User</router-link>
-            <router-link class="navbar-brand" to="/pepe">Go to Pepe</router-link>
-            <router-link class="navbar-brand" v-bind:to="'/user/'+appNumber">Go to User/{{appNumber}}</router-link>
-        </nav>
-
-        <!-- route outlet -->
-        <!-- component matched by the route will render here -->
-        <br><br><br>
-        <router-view></router-view>
-
-        <br><br>
-        appNumber = {{ appNumber }}
-        <button 
-            v-on:click="decNumber()"
-            v-bind:class="'btn-danger'"
-            class="btn btn-sm">
-            -
-        </button>
+        <div class="container">
+            <router-view></router-view>
+            <br><br>
+            appNumber = {{ appNumber }}
+            <button 
+                v-on:click="decNumber()"
+                v-bind:class="'btn-danger'"
+                class="btn btn-sm">
+                -
+            </button>
+                
+            <b-button variant="success" href="#/home">
+                Home
+            </b-button>
+        </div>
+        
+        
 
         <!-- <message-comp></message-comp>
         <table-comp v-bind:items="items_app"></table-comp> -->

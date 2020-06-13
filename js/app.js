@@ -7,7 +7,7 @@ const Home = { template: '<home-view></home-view>' }
 const Foo = { template: '<div>foo</div>' }
 const Bar = { template: '<table-auto-comp></table-auto-comp>' }
 const Msg = { template: '<message-comp></message-comp>' }
-const Tbl = { template: '<table-comp v-bind:items="items_app"></table-comp>' }
+// const Tbl = { template: '<table-comp v-bind:items="items_app"></table-comp>'}
 const User = { template: '<div>User {{ $route.params.id }}</div>' }
 const Pepe = { template: '<div>Hola Pepe</div>' }
 
@@ -21,7 +21,7 @@ const routes = [
     { path: '/foo', component: Foo },
     { path: '/bar', component: Bar },
     { path: '/msg', component: Msg },
-    { path: '/tbl', component: Tbl },
+    // { path: '/tbl', component: Tbl },
     // dynamic segments start with a colon
     { path: '/user/:id', component: User },
     { path: '/pepe', component: Pepe }
@@ -39,14 +39,16 @@ const router = new VueRouter({
 // whole app router-aware.
 var app = new Vue({
     el: '#app',
-    data:{
-        // items_app:[
-        //     {name:"Vero", descript:"Musica", amount:200, paid:false},
-        //     {name:"Romy", descript:"Secretaria", amount:100, paid:false},
-        //     {name:"Lu", descript:"Tetona", amount:400, paid:true}
-        // ],
+    data: function() {
+        return {
+        items_app:[
+            {name:"Vero", descript:"Musica", amount:200, paid:false},
+            {name:"Romy", descript:"Secretaria", amount:100, paid:false},
+            {name:"Lu", descript:"Tetona", amount:400, paid:true}
+        ],
         // appName: 'Iniciando con Vuejs2',
         appNumber: 0,
+        }
     },
     methods:{
         decNumber: function(){
