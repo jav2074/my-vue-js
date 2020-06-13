@@ -1,0 +1,27 @@
+//---------------------------------------------------------------------------------
+// proyecto-cli-01
+//---------------------------------------------------------------------------------
+npm install -g @vue/cli
+vue --version
+vue create proyecto-cli-01
+cd proyecto-cli-01
+npm run serve
+//---------------------------------------------------------------------------------
+
+
+ // es6-string-html 
+
+
+
+
+ …or create a new repository on the command line
+echo "# my-vue-js" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/jav2074/my-vue-js.git
+git push -u origin master
+                
+…or push an existing repository from the command line
+git remote add origin https://github.com/jav2074/my-vue-js.git
+git push -u origin master
