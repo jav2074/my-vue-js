@@ -45,9 +45,9 @@ Vue.component('comp-table-auto', {
     //===============================================================================
     data: function() {
         return {
-            data: [],
             loading: true,
             errored: false,
+            data: [],
             items_name: [],
         }
     },

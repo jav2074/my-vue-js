@@ -18,10 +18,10 @@ const Pepe = { template: '<div>Hola Pepe</div>' }
 // We'll talk about nested routes later.
 const routes = [
     { path: '/home', component: { template: '<home-view></home-view>' } },
-    { path: '/dolar', component: Dolar },
-    { path: '/price', component: Price },
+    { path: '/dolar', component: { template: '<view-table-dolar></view-table-dolar>'} },
+    { path: '/price', component: { template: '<view-table-price></view-table-price>'} },
     { path: '/msg', component: Msg },
-    { path: '/tbl', component: Tbl },
+    { path: '/covid', component: { template: '<view-table-covid-19></view-table-covid-19>'} },
     // dynamic segments start with a colon
     { path: '/user/:id', component: User },
     { path: '/pepe', component: Pepe }
