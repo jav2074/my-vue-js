@@ -28,14 +28,15 @@ Vue.component('view-table-dolar', {
                 keys.forEach(function(key){
                     result.push(json[key]);
                 });
-                console.log("json2array");
-                console.log(result);
+                // console.log("json2array");
+                // console.log(result);
                 return result;
             },
             getJsonKeys: function (json){
                 var keys = Object.keys(json[0]);
-                console.log("getJsonKeys");
-                console.log(keys);
+                keys.sort();
+                // console.log("getJsonKeys");
+                // console.log(keys);
                 return keys;
             },
             //-----------------------------------------------------------------------
