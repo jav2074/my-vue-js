@@ -28,6 +28,7 @@ Vue.component('view-table-covid-19', {
             var keys = Object.keys(json);
             keys.forEach(function(key)
             {
+                //----------------------------------------------------------
                 var aux = key.split('/');
                 for(var i=0; i<aux.length; i++)
                 {
@@ -36,18 +37,23 @@ Vue.component('view-table-covid-19', {
                 };
                 var date = "20"+aux[2]+"/"+aux[0]+"/"+aux[1];
                 json[key].date = date;
+                //----------------------------------------------------------
                 result.push(json[key]);
                 // debugger;
             });
-            console.log("json2array");
-            console.log(result);
+            // Eliminando el último elemento
+            result.pop();
+            // console.log("json2array");
+            // console.log(result);
             return result;
         },
+        //-----------------------------------------------------------------------
         getJsonKeys: function (json)
         {
             var keys = Object.keys(json[0]);
-            console.log("getJsonKeys");
-            console.log(keys);
+            keys.sort();
+            // console.log("getJsonKeys");
+            // console.log(keys);
             return keys;
         },
         //-----------------------------------------------------------------------

@@ -38,7 +38,7 @@ Vue.component('comp-table-auto2', {
                     </tfoot>
                 </table>
 
-                {{ data }}
+                <!-- {{ data }} -->
 
             </div>
         </section>
