@@ -62,22 +62,8 @@
                     </b-collapse>
                 </b-container>            
             </b-navbar>
-
             <br>
             <router-view class="pt-5"></router-view>
-
-            <br>
-            appNumber = {{ appNumber }}
-            <button 
-                v-on:click="decNumber()"
-                v-bind:class="'btn-danger'"
-                class="btn btn-sm">
-                -
-            </button>
-                
-            <b-button variant="success" href="#/home">
-                Home
-            </b-button>
         </div>
     </div>
 

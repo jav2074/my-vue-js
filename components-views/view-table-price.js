@@ -98,46 +98,50 @@ Vue.component('view-table-price', {
                             size="sm"
                             class="float-right"
                             block
-                            variant="primary"
+                            variant="info"
                             v-b-toggle.collapse-1 >
                             Config Table
                         </b-button>
                     </b-col>
                 </b-row>
 
-                <b-collapse id="collapse-1" class="mt-2">
-                    <b-form-group label="Table Options" label-cols-lg="2">
-                        <b-form-checkbox v-model="sortHab" inline>Sort</b-form-checkbox>
-                        <b-form-checkbox v-model="stickyHeader" inline>Sticky Header</b-form-checkbox>
-                        <b-form-checkbox v-model="striped" inline>Striped</b-form-checkbox>
-                        <b-form-checkbox v-model="bordered" inline>Bordered</b-form-checkbox>
-                        <b-form-checkbox v-model="borderless" inline>Borderless</b-form-checkbox>
-                        <b-form-checkbox v-model="outlined" inline>Outlined</b-form-checkbox>
-                        <b-form-checkbox v-model="small" inline>Small</b-form-checkbox>
-                        <b-form-checkbox v-model="hover" inline>Hover</b-form-checkbox>
-                        <b-form-checkbox v-model="dark" inline>Dark</b-form-checkbox>
-                        <b-form-checkbox v-model="fixed" inline>Fixed</b-form-checkbox>
-                        <b-form-checkbox v-model="footClone" inline>Foot Clone</b-form-checkbox>
-                        <b-form-checkbox v-model="noCollapse" inline>No border collapse</b-form-checkbox>
-                    </b-form-group>
-                    <b-form-group label="Head Variant" label-cols-lg="2">
-                        <b-form-radio-group v-model="headVariant" class="mt-lg-2">
-                            <b-form-radio :value="null" inline>None</b-form-radio>
-                            <b-form-radio value="light" inline>Light</b-form-radio>
-                            <b-form-radio value="dark" inline>Dark</b-form-radio>
-                        </b-form-radio-group>
-                    </b-form-group>
-                    <b-form-group label="Table Variant" label-for="table-style-variant" label-cols-lg="2">
-                        <b-form-select
-                            v-model="tableVariant"
-                            :options="tableVariants"
-                            id="table-style-variant">
-                            <template v-slot:first>
-                                <option value="">-- None --</option>
-                            </template>
-                        </b-form-select>
-                    </b-form-group>
-                </b-collapse>
+                <b-row>
+                    <b-col sm="12" class="my-3 bg-secondary text-white">
+                        <b-collapse id="collapse-1" class="my-2">
+                            <b-form-group label="Table Options" label-cols-lg="2">
+                                <b-form-checkbox v-model="sortHab" inline>Sort</b-form-checkbox>
+                                <b-form-checkbox v-model="stickyHeader" inline>Sticky Header</b-form-checkbox>
+                                <b-form-checkbox v-model="striped" inline>Striped</b-form-checkbox>
+                                <b-form-checkbox v-model="bordered" inline>Bordered</b-form-checkbox>
+                                <b-form-checkbox v-model="borderless" inline>Borderless</b-form-checkbox>
+                                <b-form-checkbox v-model="outlined" inline>Outlined</b-form-checkbox>
+                                <b-form-checkbox v-model="small" inline>Small</b-form-checkbox>
+                                <b-form-checkbox v-model="hover" inline>Hover</b-form-checkbox>
+                                <b-form-checkbox v-model="dark" inline>Dark</b-form-checkbox>
+                                <b-form-checkbox v-model="fixed" inline>Fixed</b-form-checkbox>
+                                <b-form-checkbox v-model="footClone" inline>Foot Clone</b-form-checkbox>
+                                <b-form-checkbox v-model="noCollapse" inline>No border collapse</b-form-checkbox>
+                            </b-form-group>
+                            <b-form-group label="Head Variant" label-cols-lg="2">
+                                <b-form-radio-group v-model="headVariant" class="m-lg-2">
+                                    <b-form-radio :value="null" inline>None</b-form-radio>
+                                    <b-form-radio value="light" inline>Light</b-form-radio>
+                                    <b-form-radio value="dark" inline>Dark</b-form-radio>
+                                </b-form-radio-group>
+                            </b-form-group>
+                            <b-form-group label="Table Variant" label-for="table-style-variant" label-cols-lg="2">
+                                <b-form-select
+                                    v-model="tableVariant"
+                                    :options="tableVariants"
+                                    id="table-style-variant">
+                                    <template v-slot:first>
+                                        <option value="">-- None --</option>
+                                    </template>
+                                </b-form-select>
+                            </b-form-group>
+                        </b-collapse>
+                    </b-col>
+                </b-row>
             </section>
         </div>
         `,
