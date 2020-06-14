@@ -1,9 +1,8 @@
-Vue.component('table-auto-comp', {
+Vue.component('comp-table-auto', {
     //===============================================================================
     template: // html 
     `
     <div>
-        <h1>{{ title }}</h1>
         <section v-if="errored">
             <p>Lo sentimos, no es posible obtener la información en este momento,
             por favor intente nuevamente mas tarde</p>
@@ -46,7 +45,6 @@ Vue.component('table-auto-comp', {
     //===============================================================================
     data: function() {
         return {
-            title: 'Titulo de la Tabla',
             data: [],
             loading: true,
             errored: false,
@@ -54,7 +52,7 @@ Vue.component('table-auto-comp', {
         }
     },
     //===============================================================================
-    // props:['config'],
+    props:['config'],
     //===============================================================================
     methods:{
         //-----------------------------------------------------------------------
@@ -83,12 +81,11 @@ Vue.component('table-auto-comp', {
     //===============================================================================
     mounted () {
         axios
-            .get('https://api.coindesk.com/v1/bpi/currentprice.json')
-            // .get('https://mindicador.cl/api/dolar')
+            .get(this.config.url_get)
             .then(response => {
-                this.data = response.data.bpi;
-                // this.data = response.data.serie; //  
-                this.data = this.json2array(this.data);
+                this.data = response.data[this.config.response];
+                if(this.config.json2array)
+                    this.data = this.json2array(this.data);
                 this.getJsonKeys(this.data);
             })
             .catch(error => {this.errored = true; console.log(error);})

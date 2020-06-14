@@ -4,10 +4,10 @@
 // 1. Define route components.
 // These can be imported from other files
 const Home = { template: '<home-view></home-view>' }
-const Foo = { template: '<div>foo</div>' }
-const Bar = { template: '<table-auto-comp></table-auto-comp>' }
+const Dolar = { template: '<view-table-dolar></view-table-dolar>'}
+const Price = { template: '<view-table-price></view-table-price>'}
 const Msg = { template: '<message-comp></message-comp>' }
-// const Tbl = { template: '<table-comp v-bind:items="items_app"></table-comp>'}
+const Tbl = { template: '<view-table-covid-19></view-table-covid-19>'}
 const User = { template: '<div>User {{ $route.params.id }}</div>' }
 const Pepe = { template: '<div>Hola Pepe</div>' }
 
@@ -18,10 +18,10 @@ const Pepe = { template: '<div>Hola Pepe</div>' }
 // We'll talk about nested routes later.
 const routes = [
     { path: '/home', component: { template: '<home-view></home-view>' } },
-    { path: '/foo', component: Foo },
-    { path: '/bar', component: Bar },
+    { path: '/dolar', component: Dolar },
+    { path: '/price', component: Price },
     { path: '/msg', component: Msg },
-    // { path: '/tbl', component: Tbl },
+    { path: '/tbl', component: Tbl },
     // dynamic segments start with a colon
     { path: '/user/:id', component: User },
     { path: '/pepe', component: Pepe }
