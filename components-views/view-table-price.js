@@ -15,12 +15,12 @@ Vue.component('view-table-price', {
             <section v-else>
 
                 <b-row>
-                    <b-col sm="6" class="my-3">
+                    <b-col sm="4" class="my-3">
                         <b-form-group
-                            label="Filter"
-                            label-cols-sm="3"
-                            label-cols-ms="2"
-                            label-cols-lg="1"
+                            label="Search"
+                            label-cols-sm="6"
+                            label-cols-ms="4"
+                            label-cols-lg="3"
                             label-align-sm="left"
                             label-size="sm"
                             label-for="filterInput"
@@ -35,7 +35,7 @@ Vue.component('view-table-price', {
                             </b-input-group>
                         </b-form-group>
                     </b-col>            
-                    <b-col sm="6" class="my-3">
+                    <b-col sm="8" class="my-3">
                     </b-col>
                 </b-row>
 
@@ -67,7 +67,7 @@ Vue.component('view-table-price', {
                 <b-row>
                     <b-col sm="4" class="my-3">
                         <b-form-group
-                            label="Per page"
+                            label="Per Page"
                             label-cols-sm="6"
                             label-cols-ms="4"
                             label-cols-lg="3"
@@ -171,11 +171,11 @@ Vue.component('view-table-price', {
                 outlined: false,
                 small: false,
                 hover: false,
-                dark: false,
+                dark: true,
                 fixed: false,
                 footClone: false,
-                headVariant: null,
-                tableVariant: '',
+                headVariant: 'dark',
+                tableVariant: 'success',
                 noCollapse: false,
                 sortBy: '',
                 sortDesc: false,
@@ -183,7 +183,7 @@ Vue.component('view-table-price', {
                 filter: null,
                 totalRows: 1,
                 currentPage: 1,
-                perPage: 1,
+                perPage: 5,
                 pageOptions: [1, 2, 5, 10, 15],
             }
         },
