@@ -3,7 +3,7 @@ Vue.component('view-table-covid-19', {
     `
         <div>
             <h2>Tabla Covid-19</h2>
-            <comp-table-auto2  v-bind:data="data"></comp-table-auto2>
+            <comp-table-auto2 v-bind:data="data"></comp-table-auto2>
         </div>
     `,
     data: function() {
@@ -15,6 +15,7 @@ Vue.component('view-table-covid-19', {
                 items_data: [],
                 items_name: [],
             },
+            get_url: "https://api.thevirustracker.com/free-api?countryTimeline=AR",
         }
     },
     //===============================================================================
@@ -44,10 +45,10 @@ Vue.component('view-table-covid-19', {
     //===============================================================================
     mounted () {
         axios
-            .get("https://api.thevirustracker.com/free-api?countryTimeline=AR")
+            .get(this.get_url)
             .then(response => {
                 this.data.items_data = response.data.countrytimelinedata;
-                this.data.items_data = this.json2array(this.data.items_data);
+                this.data.items_data = this.json2array(this.data.items_data[0]);
                 this.data.items_name = this.getJsonKeys(this.data.items_data);
             })
             .catch(error => {this.data.errored = true; console.log(error);})
