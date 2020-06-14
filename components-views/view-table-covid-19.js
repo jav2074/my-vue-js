@@ -22,12 +22,18 @@ Vue.component('view-table-covid-19', {
     //===============================================================================
     methods:{
         //-----------------------------------------------------------------------
-        json2array: function(json){
+        json2array: function(json)
+        {
             var result = [];
             var keys = Object.keys(json);
-            keys.forEach(function(key){
+            keys.forEach(function(key)
+            {
                 var aux = key.split('/');
-                aux[0] = aux[0] < 10 ? '0' + aux[0] : aux[0];
+                for(var i=0; i<aux.length; i++)
+                {
+                    aux[i] = parseInt(aux[i]);
+                    aux[i] = aux[i] < 10 ? '0' + aux[i] : aux[i];
+                };
                 var date = "20"+aux[2]+"/"+aux[0]+"/"+aux[1];
                 json[key].date = date;
                 result.push(json[key]);
@@ -37,7 +43,8 @@ Vue.component('view-table-covid-19', {
             console.log(result);
             return result;
         },
-        getJsonKeys: function (json){
+        getJsonKeys: function (json)
+        {
             var keys = Object.keys(json[0]);
             console.log("getJsonKeys");
             console.log(keys);
