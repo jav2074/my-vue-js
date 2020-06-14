@@ -2,7 +2,7 @@ Vue.component('view-table-dolar', {
         template: // html 
         `
             <div>
-                <h2>Tabla Dolar</h2>
+                <h2>{{title}}</h2>
                 <comp-table-auto2 v-bind:data="data"></comp-table-auto2>
             </div>
         `,
@@ -15,6 +15,7 @@ Vue.component('view-table-dolar', {
                     items_data: [],
                     items_name: [],
                 },
+                title: "Tabla Dolar",
                 get_url: "https://mindicador.cl/api/dolar",
             }
         },

@@ -2,7 +2,7 @@ Vue.component('view-table-price', {
         template: // html 
         `
             <div>
-                <h2>Tabla Price</h2>
+                <h2>{{title}}</h2>
                 <comp-table-auto2 v-bind:data="data"></comp-table-auto2>
             </div>
         `,
@@ -15,6 +15,7 @@ Vue.component('view-table-price', {
                     items_data: [],
                     items_name: [],
                 },
+                title: "Tabla Price",
                 get_url: "https://api.coindesk.com/v1/bpi/currentprice.json",
             }
         },
