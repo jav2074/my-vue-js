@@ -151,7 +151,7 @@ Vue.component('view-table-price', {
                 {            
                     
                 },
-                title: "Tabla Price",
+                title: "Table Price",
                 get_url: "https://api.coindesk.com/v1/bpi/currentprice.json",
                 loading: true,
                 errored: false,
